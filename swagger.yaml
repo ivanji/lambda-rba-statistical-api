@@ -1,0 +1,62 @@
+swagger: '2.0'
+info:
+  description: >-
+    This is the documentation on how to use this Data API to retrieve all
+    statistical data published by the Reserve Bank of Australia. This API makes
+    available all up-to-date statistical data found on the RBA website.
+  version: 1.0.0
+  title: RBA Statistical Data API
+  termsOfService: 'http://ijewebservices.net/terms/'
+  contact:
+    email: ivanji@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: data.ijewebservices.net
+basePath: /v1
+tags:
+  - name: statistical
+    description: Public Endpoint for access to all statistical data issued by RBA in JSON
+schemes:
+  - http
+paths:
+  /statistical:
+    get:
+      tags:
+        - statistical
+      summary: displays a list of all available statistical data
+      description: ''
+      operationId: addPet
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: '[ displays a json object containing all available statistical data ]'
+  '/statistical/{tableName}':
+    get:
+      tags:
+        - statistical
+      summary: Loads data for specified table
+      description: Only one table can be provided at a time
+      operationId: findPetsByStatus
+      produces:
+        - application/json
+      parameters:
+        - name: tableName
+          in: path
+          description: Statistical table name as titled by RBA. <br /><em>e.g. a1-data</em>
+          required: true
+          type: string
+          items:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Pet'
+        '400':
+          description: Invalid status value
