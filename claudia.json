@@ -1,0 +1,10 @@
+{
+  "lambda": {
+    "role": "rba-statistics-executor",
+    "name": "rba-statistics",
+    "region": "us-west-2"
+  },
+  "api": {
+    "id": "nqhrq447e6"
+  }
+}
