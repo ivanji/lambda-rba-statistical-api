@@ -1,6 +1,6 @@
 # lambda-rba-statistical-api
 REST API for all statistical data from the Reserve Bank of Australia. 
-Integrated with AWS Lambda and API Gateway, using claudiajs, to deploy it as an event-drive microservice.
+Integrated with AWS Lambda and API Gateway, using claudiajs, to deploy it as an event-driven microservice.
 
 *Requirements*
 - AWS account with access to IAM and Lambda (AWS CLI)
