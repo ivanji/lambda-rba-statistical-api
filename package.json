@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,8 @@
     "csvtojson": "^1.1.7",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
-    "get-csv": "^3.0.3"
-  }
+    "get-csv": "^3.0.3",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
